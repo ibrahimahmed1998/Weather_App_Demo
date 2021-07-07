@@ -1,0 +1,26 @@
+{
+  "name": "weather_app-js_api-demo",
+  "version": "1.0.0",
+  "description": "Simple NODE.JS Code include https://openweathermap.org/ APIs in my server then Response All Info about Weather and Current Date to Client Browser",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ibrahimahmed1998/Weather_App-JS_API-Demo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ibrahimahmed1998/Weather_App-JS_API-Demo/issues"
+  },
+  "homepage": "https://github.com/ibrahimahmed1998/Weather_App-JS_API-Demo#readme"
+}
