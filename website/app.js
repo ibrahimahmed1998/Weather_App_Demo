@@ -7,15 +7,19 @@ const MyKey="&appid=1834a80ff251e3825e4b27bc56b6c633&units=metric";// my key in 
 /**********************************************************************************/
 generate=document.getElementById('generate').addEventListener("click",DO);//button on html page where i click on it that call DO function
 function DO(e){
-    const new_z_code= document.getElementById('zip').value ;   // zipcode that i want to know temprature of this area                
+    const city_id= document.getElementById('cid').value ;   // city id that i want to know temprature of this area                
     const my_feelings = document.getElementById('feelings').value ;  // random string that user enter it to say what he/she feels        
 
-    function_weather(URL_,new_z_code,MyKey).then(function(data){                           
+    function_weather(URL_,city_id,MyKey).then(function(data)
+    {        
+
         postData(post,{date:newdate,temp:data.list[0].main.temp,content:my_feelings});
-        updateUI();})};
+        updateUI();
+        document.getElementById('cid').value=" " ;   // city id that i want to know temprature of this area                
+    })};
 /************************************function_weather**********************************************/
-const function_weather = async(URL_,zip,key)=>{  // example : zipcode = 2643743
-    const response=await fetch(URL_+zip+key)
+const function_weather = async(URL_,cid,key)=>{  // example : cid = 2643743
+    const response=await fetch(URL_+cid+key)
     try{const data=await response.json();
         return data;}catch(err){console.log("err",err);}}
 /**********************************POST-METHOD************************************************/          
@@ -34,8 +38,6 @@ const updateUI = async()=>{
     document.getElementById('temp').innerHTML = `Temperature:${allData.temp}`;
     document.getElementById('content').innerHTML = `I feel:${allData.feel}`;
     }catch(err){
-    console.log('error',err);
-    }
-    }
-            
+    console.log("err",err);
+    }}      
 /**********************************************************************************/

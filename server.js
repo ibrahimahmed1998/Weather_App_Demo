@@ -1,16 +1,17 @@
 
+projectData = {};   // empty list to contain information lisk [date||temp||content"feelings"]
 const express = require('express'); // require express javascript 
-const app = express();  
 const bodyParser = require('body-parser');  // require bodyParser from express Packages  
+const app = express();  
 /***************************/
 app.use(bodyParser.urlencoded({extended: false }));
 app.use(bodyParser.json());
 /***************************/
-const cors = require('cors');app.use(cors());
+const cors = require('cors');
+app.use(cors());
 /***************************/
 app.use(express.static('website'));   // require html+css+app.js files from website Directory 
 
-projectData = {};   // empty list to contain information lisk [date||temp||content"feelings"]
 const port = 8000 ;     // open port on local server : 8000 
 const server = app.listen(port,listening) ;     // listen to server on port 8000 
 
@@ -31,6 +32,8 @@ function addData(request,response)
     projectData["date"] = data.date; projectData["temp"] = data.temp; projectData["feel"] = data.content;
     response.send(projectData);
 }
-function sendData(request,response){
+function sendData(request,response)
+{
     response.send(projectData);      // send data as response from app server 
-    projectData={};}                 // make projectData Empty after send information to Display it 
+    projectData={}; // make projectData Empty after send information to Display it 
+}                 
