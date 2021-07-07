@@ -4,7 +4,9 @@
     I was want use (import or Require)  and  ( document.get... or window.document.get... )
      but i read about it hard to impelement require or import with Node.js 
     as this work as backend Language not with Clint Browser So can'
-    
+
+    reference : https://stackoverflow.com/questions/32126003/node-js-document-is-not-defined 
+ 
 */
 const days=new Date(); // get Current Time from Date Function 
 const newdate=(days.getMonth()+1)+'/'+days.getDate()+'/'+days.getFullYear();  // Equality Current time in newdate container 
